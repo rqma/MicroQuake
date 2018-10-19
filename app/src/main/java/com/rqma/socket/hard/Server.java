@@ -1,11 +1,13 @@
-package com.rqma.socket.util;
+package com.rqma.socket.hard;
+
+import com.rqma.socket.hard.ServerThread;
 
 import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
 
 /**
- * Created RQMA on 2018/10/14.
+ * Created RQMA on 2018/10/15.
  */
 public class Server {
     public static void main(String[] args) {
@@ -13,8 +15,8 @@ public class Server {
         ServerSocket serverSocket = null;
         try {
             serverSocket = new ServerSocket(server_port);
+            System.out.println("服务器监听中:");
             while (true) {
-                System.out.println("服务器监听中:");
                 Socket socket = serverSocket.accept();
                 new ServerThread(socket).start();
             }

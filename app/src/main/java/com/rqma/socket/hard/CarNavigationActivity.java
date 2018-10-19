@@ -1,4 +1,4 @@
-package com.rqma.socket.activity;
+package com.rqma.socket.hard;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;

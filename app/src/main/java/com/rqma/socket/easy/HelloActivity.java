@@ -1,13 +1,13 @@
-package com.rqma.socket.activity;
+package com.rqma.socket.easy;
 
+import android.annotation.SuppressLint;
+import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.TextView;
 
 import com.rqma.socket.R;
@@ -21,38 +21,39 @@ import java.net.Socket;
 /**
  * Created RQMA on 2018/10/13.
  */
-public class QQActivity extends AppCompatActivity implements View.OnClickListener {
-    private Button bt_send;
-    private TextView tt_receive;
-    private EditText et_input;
+public class HelloActivity extends AppCompatActivity implements View.OnClickListener {
+    private TextView tv_hello;
+    private Button bt_send_hello;
+    @SuppressLint("HandlerLeak")
     private Handler handler = new Handler() {
         @Override
         public void handleMessage(Message msg) {
             StringBuilder str = (StringBuilder) msg.obj;
-            tt_receive.setText(str.toString());
+            tv_hello.setText(str.toString());
+            System.out.println(tv_hello.getText());
         }
     };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_qq);
+        setContentView(R.layout.activity_hello);
         init();
+
     }
 
+    //初始化布局
     private void init() {
-        bt_send = (Button) findViewById(R.id.bt_send);
-        tt_receive = (TextView) findViewById(R.id.tt_receive);
-        et_input = (EditText) findViewById(R.id.et_input);
-        bt_send.setOnClickListener(this);
+        tv_hello = (TextView) findViewById(R.id.tt_hello);
+        bt_send_hello = (Button) findViewById(R.id.bt_send_hello);
+        bt_send_hello.setOnClickListener(this);
 
     }
 
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.bt_send: {
-                System.out.println("-----------------------");
+            case R.id.bt_send_hello: {
                 NetThread netThread = new NetThread();
                 new Thread(netThread).start();
                 break;
@@ -77,7 +78,7 @@ public class QQActivity extends AppCompatActivity implements View.OnClickListene
                 socket_client = new Socket(server_addr, server_port);
                 //向服务器发送数据
                 os = socket_client.getOutputStream();
-                os.write(String.valueOf(et_input.getText()).getBytes());
+                os.write(String.valueOf(tv_hello.getText()).getBytes());
                 os.flush();
                 socket_client.shutdownOutput();
 
@@ -85,7 +86,7 @@ public class QQActivity extends AppCompatActivity implements View.OnClickListene
                 is = socket_client.getInputStream();
                 bufferedReader = new BufferedReader(new InputStreamReader(is));
                 StringBuilder sb = new StringBuilder();
-                String str ;
+                String str;
                 while ((str = bufferedReader.readLine()) != null) {
                     sb.append(str);
                 }
@@ -97,7 +98,6 @@ public class QQActivity extends AppCompatActivity implements View.OnClickListene
                 //关闭IO资源
 
             } catch (Exception e) {
-
                 e.printStackTrace();
             } finally {
                 try {
@@ -112,4 +112,5 @@ public class QQActivity extends AppCompatActivity implements View.OnClickListene
             }
         }
     }
+
 }

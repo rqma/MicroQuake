@@ -1,4 +1,4 @@
-package com.rqma.socket.util;
+package com.rqma.socket.hard;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -8,7 +8,7 @@ import java.io.OutputStream;
 import java.net.Socket;
 
 /**
- * Created RQMA on 2018/10/14.
+ * Created RQMA on 2018/10/15.
  */
 public class ServerThread implements Runnable {
     private Socket socket;
@@ -32,7 +32,7 @@ public class ServerThread implements Runnable {
             while ((str = bufferedReader.readLine()) != null) {
                 sb.append(str);
             }
-            System.out.println("客户端[" + socket.getLocalSocketAddress() + "]发来的信息是: " + sb.toString());
+            System.out.println("客户端[" + socket.getInetAddress().getHostAddress()+ "]发来的信息是: " + sb.toString());
             socket.shutdownInput();
 
             //判断移动方向是否合法

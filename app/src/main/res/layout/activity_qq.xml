@@ -1,76 +1,62 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
-    <Button
-        android:id="@+id/bt_tosecond"
-        android:layout_width="125dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="0dp"
-
-        android:layout_weight="1"
-        android:background="@drawable/bt"
-        android:text="发送"
-        android:textSize="25sp" />
-    <TextView
-        android:id="@+id/tt_title"
-        android:layout_width="wrap_content"
-        android:layout_height="40dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="3dp"
-        android:layout_marginTop="258dp"
-        android:layout_weight="1"
-        android:background="@drawable/et"
-        android:text="服务器端返回:"
-        android:textColor="#34703d"
-        android:textSize="20sp" />
-
-    <TextView
-        android:id="@+id/tt_receive"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="20dp"
+    >
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="40dp"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="-1dp"
-        android:layout_marginBottom="213dp"
-        android:layout_toEndOf="@+id/tt_title"
-        android:background="@drawable/tt"
-        android:hint="---"
-        android:textColor="#34703d"
-        android:textSize="20sp" />
+        android:layout_marginTop="150dp"
 
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tt_title"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="@drawable/et"
+            android:text="服务器端返回:"
+            android:textColor="#34703d"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/tt_receive"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="20dp"
+            android:background="@drawable/tt"
+            android:gravity="center"
+            android:hint="message"
+            android:textColor="#34703d"
+            android:textSize="20sp" />
+    </LinearLayout>
 
 
     <LinearLayout
         android:id="@+id/layout"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="100dp"
         android:orientation="horizontal">
 
         <EditText
             android:id="@+id/et_input"
-            android:layout_width="310dp"
+            android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="1"
+            android:layout_weight="2"
             android:background="@drawable/et"
-            android:hint="输入内容"
-            />
+            android:hint="输入内容" />
 
         <Button
             android:id="@+id/bt_send"
-            android:layout_width="166dp"
-            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
             android:layout_weight="1"
-            android:textSize="25sp"
             android:background="@drawable/bt"
-            android:text="发送" />
+            android:text="发送"
+            android:textSize="25sp" />
     </LinearLayout>
 
-</RelativeLayout>
+</LinearLayout>
