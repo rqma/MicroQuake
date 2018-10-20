@@ -20,7 +20,7 @@ import java.io.OutputStream;
 import java.net.Socket;
 
 /**
- * Created RQMA on 2018/10/14.
+ * Created by RQMA on 2018/10/14.
  */
 public class QQActivity extends AppCompatActivity implements View.OnClickListener {
     private Button bt_send;
@@ -66,7 +66,7 @@ public class QQActivity extends AppCompatActivity implements View.OnClickListene
 
     class NetThread implements Runnable {
         private String server_addr = "192.168.137.1";
-        private int server_port = 6666;
+        private int server_port = 6668;
 
         @Override
         public void run() {

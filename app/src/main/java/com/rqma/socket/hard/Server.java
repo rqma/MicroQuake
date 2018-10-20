@@ -7,11 +7,11 @@ import java.net.ServerSocket;
 import java.net.Socket;
 
 /**
- * Created RQMA on 2018/10/15.
+ * Created by RQMA on 2018/10/15.
  */
 public class Server {
     public static void main(String[] args) {
-        int server_port = 6666;
+        int server_port = 6667;
         ServerSocket serverSocket = null;
         try {
             serverSocket = new ServerSocket(server_port);

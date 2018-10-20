@@ -10,7 +10,7 @@ import java.net.Socket;
 import java.util.Random;
 
 /**
- * Created RQMA on 2018/10/13.
+ * Created by RQMA on 2018/10/13.
  */
 public class Server {
     public static void main(String[] args) {

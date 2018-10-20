@@ -8,7 +8,7 @@ import java.io.OutputStream;
 import java.net.Socket;
 
 /**
- * Created RQMA on 2018/10/14.
+ * Created by RQMA on 2018/10/14.
  */
 public class ServerThread implements Runnable {
     private Socket socket;

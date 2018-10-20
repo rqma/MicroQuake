@@ -26,7 +26,7 @@ import java.net.Socket;
 
 
 /**
- * Created RQMA on 2018/10/15.
+ * Created by RQMA on 2018/10/15.
  */
 public class CarNavigationActivity extends Activity implements OnClickListener {
 
@@ -146,7 +146,7 @@ public class CarNavigationActivity extends Activity implements OnClickListener {
 
     class NetThread implements Runnable {
         private String server_addr = "192.168.137.1";
-        private int server_port = 6666;
+        private int server_port = 6667;
         private String data;
 
         @Override

@@ -19,7 +19,7 @@ import java.io.OutputStream;
 import java.net.Socket;
 
 /**
- * Created RQMA on 2018/10/13.
+ * Created by RQMA on 2018/10/13.
  */
 public class HelloActivity extends AppCompatActivity implements View.OnClickListener {
     private TextView tv_hello;
