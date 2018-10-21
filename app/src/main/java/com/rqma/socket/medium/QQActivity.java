@@ -32,6 +32,7 @@ public class QQActivity extends AppCompatActivity implements View.OnClickListene
         public void handleMessage(Message msg) {
             StringBuilder str = (StringBuilder) msg.obj;
             tt_receive.setText(str.toString());
+            System.out.println(tt_receive.getText());
         }
     };
 
@@ -54,7 +55,6 @@ public class QQActivity extends AppCompatActivity implements View.OnClickListene
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.bt_send: {
-                System.out.println("-----------------------");
                 NetThread netThread = new NetThread();
                 new Thread(netThread).start();
                 break;

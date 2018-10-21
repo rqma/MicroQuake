@@ -31,6 +31,6 @@
         android:layout_marginTop="50dp"
         android:layout_gravity="center_horizontal"
         android:background="@drawable/bt"
-        android:text="高级-小车移动"
+        android:text="高级-移动小车"
         android:textSize="25sp" />
 </LinearLayout>

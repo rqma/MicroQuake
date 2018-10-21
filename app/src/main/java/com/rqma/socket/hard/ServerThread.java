@@ -63,10 +63,10 @@ public class ServerThread implements Runnable {
 
     private boolean IsOutSquare(StringBuilder sb) {
 
-        final int LEFT = -1;
-        final int RIGHT = 1;
-        final int FORWARD = -2;
-        final int BACKWARD = 2;
+        final int DIRECTION_LEFT = -1;
+        final int DIRECTION_RIGHT = 1;
+        final int DIRECTION_FORWARD = -2;
+        final int DIRECTION_BACKWARD = 2;
 
         final float MAGIN_LEFT = 200;//左边界
         final float MAGIN_RIGHT = 400;//右边界
@@ -80,22 +80,22 @@ public class ServerThread implements Runnable {
         float speed = Float.valueOf(str_loc[3]);
         int flag = 0;
         switch (direction) {
-            case LEFT: {
+            case DIRECTION_LEFT: {
                 if (loc_X - speed < MAGIN_LEFT)
                     flag = 1;
                 break;
             }
-            case RIGHT: {
+            case DIRECTION_RIGHT: {
                 if (loc_X + speed > MAGIN_RIGHT)
                     flag = 1;
                 break;
             }
-            case FORWARD: {
+            case DIRECTION_FORWARD: {
                 if (loc_Y - speed < MAGIN_FORWARD)
                     flag = 1;
                 break;
             }
-            case BACKWARD: {
+            case DIRECTION_BACKWARD: {
                 if (loc_Y + speed > MAGIN_BACKWARD)
                     flag = 1;
                 break;

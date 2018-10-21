@@ -62,7 +62,7 @@ public class HelloActivity extends AppCompatActivity implements View.OnClickList
                 break;
         }
     }
-
+    //网络请求
     class NetThread implements Runnable {
         private String server_addr = "192.168.137.1";
         private int server_port = 6666;

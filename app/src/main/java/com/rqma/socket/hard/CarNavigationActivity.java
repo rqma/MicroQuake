@@ -29,23 +29,27 @@ import java.net.Socket;
  * Created by RQMA on 2018/10/15.
  */
 public class CarNavigationActivity extends Activity implements OnClickListener {
-
+    //按钮前进,后退,左转,右转
     private Button bt_forward, bt_backward, bt_left, bt_right;
+    //小车
     private ImageView iv_car;
+    //显示坐标信息
     private TextView tt_location;
+    //坐标信息字符串
     private String str_location;
+    //返回的结果值
     private int result;
-
+    //当前坐标
     private float current_X = 300;
     private float current_Y = 300;
-
+    //小车移动速度
     private float speed = 10;
     private int direction = 0;
-
-    private final int LEFT = -1;
-    private final int RIGHT = 1;
-    private final int FORWARD = -2;
-    private final int BACKWARD = 2;
+    //四个常量，表示前进,后退,左转,右转
+    private final int DIRECTION_LEFT = -1;
+    private final int DIRECTION_RIGHT = 1;
+    private final int DIRECTION_FORWARD = -2;
+    private final int DIRECTION_BACKWARD = 2;
 
     @SuppressLint("HandlerLeak")
     private Handler handler = new Handler() {
@@ -58,23 +62,23 @@ public class CarNavigationActivity extends Activity implements OnClickListener {
                 Toast.makeText(CarNavigationActivity.this, "哈哈哈,此路不通", Toast.LENGTH_SHORT).show();
             } else {
                 switch (direction) {
-                    case LEFT: {
+                    case DIRECTION_LEFT: {
                         iv_car.setX(current_X - speed);
                         current_X = iv_car.getX();
                         break;
                     }
-                    case RIGHT: {
+                    case DIRECTION_RIGHT: {
                         iv_car.setX(current_X + speed);
                         current_X = iv_car.getX();
                         break;
                     }
-                    case FORWARD: {
+                    case DIRECTION_FORWARD: {
 
                         iv_car.setY(current_Y - speed);
                         current_Y = iv_car.getY();
                         break;
                     }
-                    case BACKWARD: {
+                    case DIRECTION_BACKWARD: {
                         iv_car.setY(current_Y + speed);
                         current_Y = iv_car.getY();
                         break;
@@ -85,7 +89,7 @@ public class CarNavigationActivity extends Activity implements OnClickListener {
             }
 
             System.out.println("当前坐标: " + str_location);
-            System.out.println("*********************" );
+            System.out.println("*********************");
         }
     };
 
@@ -127,16 +131,16 @@ public class CarNavigationActivity extends Activity implements OnClickListener {
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.bt_forward:
-                direction = -2;
+                direction = DIRECTION_FORWARD;
                 break;
             case R.id.bt_backward:
-                direction = 2;
+                direction = DIRECTION_BACKWARD;
                 break;
             case R.id.bt_left:
-                direction = -1;
+                direction = DIRECTION_LEFT;
                 break;
             case R.id.bt_right:
-                direction = 1;
+                direction = DIRECTION_BACKWARD;
                 break;
             default:
                 break;
