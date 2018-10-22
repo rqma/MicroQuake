@@ -42,7 +42,7 @@ public class ServerThread implements Runnable {
             //向客户端发送数据
             os = socket.getOutputStream();
             os.write(String.valueOf(result).getBytes());
-            System.out.println(result);
+           // System.out.println(result);
             os.flush();
             socket.shutdownOutput();
 

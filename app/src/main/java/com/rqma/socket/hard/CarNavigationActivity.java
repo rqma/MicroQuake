@@ -16,6 +16,7 @@ import android.widget.Toast;
 
 
 import com.rqma.socket.R;
+import com.rqma.socket.entity.Server_Addr;
 
 import java.io.BufferedReader;
 import java.io.InputStream;
@@ -140,7 +141,7 @@ public class CarNavigationActivity extends Activity implements OnClickListener {
                 direction = DIRECTION_LEFT;
                 break;
             case R.id.bt_right:
-                direction = DIRECTION_BACKWARD;
+                direction = DIRECTION_RIGHT;
                 break;
             default:
                 break;
@@ -149,8 +150,9 @@ public class CarNavigationActivity extends Activity implements OnClickListener {
     }
 
     class NetThread implements Runnable {
-        private String server_addr = "192.168.137.1";
-        private int server_port = 6667;
+        private String server_ip = Server_Addr.IP;
+        private int server_port = Server_Addr.PORT_CARNAVIGATION;
+
         private String data;
 
         @Override
@@ -161,7 +163,7 @@ public class CarNavigationActivity extends Activity implements OnClickListener {
             BufferedReader bufferedReader = null;
             try {
                 //建立连接
-                socket_client = new Socket(server_addr, server_port);
+                socket_client = new Socket(server_ip, server_port);
 
                 //要向服务器发送的数据：坐标,移动方向,速度
                 data = str_location + "," + direction + "," + speed;

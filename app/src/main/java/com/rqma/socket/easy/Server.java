@@ -1,5 +1,7 @@
 package com.rqma.socket.easy;
 
+import com.rqma.socket.entity.Server_Addr;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
@@ -14,7 +16,7 @@ import java.util.Random;
  */
 public class Server {
     public static void main(String[] args) {
-        int server_port = 6666;
+        int server_port = Server_Addr.PORT_HELLO;
         ServerSocket serverSocket = null;
         Socket socket = null;
         InputStream is = null;

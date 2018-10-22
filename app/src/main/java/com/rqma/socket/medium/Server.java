@@ -1,5 +1,7 @@
 package com.rqma.socket.medium;
 
+import com.rqma.socket.entity.Server_Addr;
+
 import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
@@ -9,7 +11,7 @@ import java.net.Socket;
  */
 public class Server {
     public static void main(String[] args) {
-        int server_port = 6668;
+        int server_port = Server_Addr.PORT_QQ;
         ServerSocket serverSocket = null;
         try {
             serverSocket = new ServerSocket(server_port);

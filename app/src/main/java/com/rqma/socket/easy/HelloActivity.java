@@ -11,6 +11,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.rqma.socket.R;
+import com.rqma.socket.entity.Server_Addr;
 
 import java.io.BufferedReader;
 import java.io.InputStream;
@@ -64,8 +65,8 @@ public class HelloActivity extends AppCompatActivity implements View.OnClickList
     }
     //网络请求
     class NetThread implements Runnable {
-        private String server_addr = "192.168.137.1";
-        private int server_port = 6666;
+        private String server_ip = Server_Addr.IP;
+        private int server_port = Server_Addr.PORT_HELLO;
 
         @Override
         public void run() {
@@ -75,7 +76,7 @@ public class HelloActivity extends AppCompatActivity implements View.OnClickList
             BufferedReader bufferedReader = null;
             try {
                 //建立连接
-                socket_client = new Socket(server_addr, server_port);
+                socket_client = new Socket(server_ip, server_port);
                 //向服务器发送数据
                 os = socket_client.getOutputStream();
                 os.write(String.valueOf(tv_hello.getText()).getBytes());

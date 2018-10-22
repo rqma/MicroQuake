@@ -12,6 +12,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.rqma.socket.R;
+import com.rqma.socket.entity.Server_Addr;
 
 import java.io.BufferedReader;
 import java.io.InputStream;
@@ -65,8 +66,8 @@ public class QQActivity extends AppCompatActivity implements View.OnClickListene
     }
 
     class NetThread implements Runnable {
-        private String server_addr = "192.168.137.1";
-        private int server_port = 6668;
+        private String server_ip = Server_Addr.IP;
+        private int server_port = Server_Addr.PORT_QQ;
 
         @Override
         public void run() {
@@ -76,7 +77,7 @@ public class QQActivity extends AppCompatActivity implements View.OnClickListene
             BufferedReader bufferedReader = null;
             try {
                 //建立连接
-                socket_client = new Socket(server_addr, server_port);
+                socket_client = new Socket(server_ip, server_port);
                 //向服务器发送数据
                 os = socket_client.getOutputStream();
                 os.write(String.valueOf(et_input.getText()).getBytes());
@@ -87,7 +88,7 @@ public class QQActivity extends AppCompatActivity implements View.OnClickListene
                 is = socket_client.getInputStream();
                 bufferedReader = new BufferedReader(new InputStreamReader(is));
                 StringBuilder sb = new StringBuilder();
-                String str ;
+                String str;
                 while ((str = bufferedReader.readLine()) != null) {
                     sb.append(str);
                 }
