@@ -1,8 +1,10 @@
-package com.rqma.history;
-
-import java.util.Comparator;
+package com.rqma.interfaceimpl;
 
 import com.h2.constant.Parameters;
+import com.rqma.bean.TimeLine;
+import com.rqma.util.StrUtil;
+
+import java.util.Comparator;
 
 /**
  * @Description:
@@ -11,15 +13,16 @@ import com.h2.constant.Parameters;
  */
 public class  ComparatorTimeLine implements Comparator<TimeLine> {
     @SuppressWarnings("unused")
+
 	@Override
     public int compare(TimeLine o1, TimeLine o2) {
     	
     	
     	int diff=0;
     	if(Parameters.region_offline=="datong")
-    		diff = SubStrUtil.getSubParentPackage(o1.filename).compareTo(SubStrUtil.getSubParentPackage(o2.filename));
-    	else if(Parameters.region_offline=="pingdingshan") {
-    		diff = o1.filename.compareTo(o2.filename);
+    		diff = StrUtil.getTimeFromMrLiuFileName(o1.getFilename()).compareTo(StrUtil.getTimeFromMrLiuFileName(o2.getFilename()));
+    	else if(Parameters.region_offline=="pingdingshan"|| Parameters.region_offline=="hongyang") {
+    		diff = o1.getFilename().compareTo(o2.getFilename());
     	}
         if (diff > 0)
             return 1;

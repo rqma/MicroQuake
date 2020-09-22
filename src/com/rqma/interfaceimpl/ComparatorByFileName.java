@@ -1,19 +1,24 @@
-package com.rqma.history;
+package com.rqma.interfaceimpl;
+
+import com.h2.constant.Parameters;
+import com.rqma.bean.TimeLine;
+import com.rqma.util.StrUtil;
 
 import java.io.File;
 import java.util.Comparator;
 
-import com.h2.constant.Parameters;
-
+/**
+* @Description:    compare file name order
+* @Author:         RQMA
+* @CreateDate:     2020/6/3 12:38
+*/
 public class ComparatorByFileName implements Comparator<File> {
     private TimeLine timeLine;
     @SuppressWarnings("unused")
 	public int compare(File f1, File f2) {
-    	
-    	
     	int diff=0;
     	if(Parameters.region_offline=="datong")
-    		diff = SubStrUtil.getSubParentPackage(f1.getName()).compareTo(SubStrUtil.getSubParentPackage(f2.getName()));
+    		diff = StrUtil.getTimeFromMrLiuFileName(f1.getName()).compareTo(StrUtil.getTimeFromMrLiuFileName(f2.getName()));
     	else if(Parameters.region_offline=="pingdingshan")
     		diff = f1.getName().compareTo(f2.getName());
     	

@@ -1,14 +1,15 @@
-package com.rqma.history;
+package com.rqma.util;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
 /**
- * @Description:
+ * @Description: date utils
  * @Auther: RQMA
  * @Date: 4/26/2019 11:16 PM
  */
+
 public class DateUtil {
 
     /**
