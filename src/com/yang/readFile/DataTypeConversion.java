@@ -1,11 +1,8 @@
 package com.yang.readFile;
 
 /**
- * Author锟斤拷锟斤拷锟缴凤拷     Date锟斤拷2018锟斤拷7锟斤拷10锟斤拷
- * Description锟斤拷锟斤拷锟斤拷为锟斤拷锟斤拷锟斤拷锟斤拷转锟斤拷锟斤拷锟斤拷锟洁，
- * 锟斤拷锟斤拷锟斤拷锟斤拷锟侥硷拷锟斤拷锟角讹拷锟斤拷锟斤拷锟侥硷拷锟斤拷锟斤拷锟斤拷锟斤拷目锟斤拷锟斤拷锟斤拷锟斤拷锟狡碉拷锟斤拷息锟斤拷然要转锟斤拷为锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷int锟斤拷short锟斤拷String锟饺ｏ拷
- * 锟斤拷锟斤拷婕帮拷锟斤拷锟斤拷锟斤拷锟斤拷偷锟阶拷锟斤拷锟絁ava锟斤拷Sting锟斤拷锟斤拷锟结供锟剿达拷锟斤拷锟斤拷锟斤拷锟斤拷锟街凤拷锟斤拷锟侥癸拷锟届方锟斤拷锟斤拷String s = new String(byte[])锟斤拷
- * String s = new String(byte[] , charSetName)锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷只锟斤拷锟皆讹拷锟藉方锟斤拷锟斤拷锟斤拷转锟斤拷
+ * this function used to save one data. 
+ *@author Chengfeng Liu.
  */
 public class DataTypeConversion {
 	public static void main(String[] arg){

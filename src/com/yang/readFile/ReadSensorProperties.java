@@ -1,16 +1,11 @@
 package com.yang.readFile;
 
-import java.io.BufferedInputStream;
-import java.io.ByteArrayInputStream;
-import java.io.DataInputStream;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.IOException;
 import com.yang.unity.SensorProperties;
-import com.yang.util.Byte2Int;
 import com.yang.util.Byte2Short;
 import com.yang.util.Byte2String;
 import com.yang.util.FindByte;
+
+import java.io.*;
 
 public class ReadSensorProperties {
 
@@ -26,6 +21,7 @@ public class ReadSensorProperties {
 	 *         sensor[6] represents the GPS channel
 	 * 
 	 * @throws IOException
+	 * @author Xingdong Yang.
 	 */
 	public SensorProperties[] readSensorProperties(String fileName)
 			throws IOException {

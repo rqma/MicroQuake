@@ -1,5 +1,6 @@
 package com.yang.readFile;
-import java.io.*;
+
+import java.io.File;
 
 public class FindNewHFMED {
 	//public static String[] nameF = new String[5];//保存5个台站上次的最新文件

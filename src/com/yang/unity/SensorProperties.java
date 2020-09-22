@@ -1,7 +1,5 @@
 package com.yang.unity;
 
-import java.util.Arrays;
-
 /**通道信息，在文件头下面，一共有7个通道信息
  * 
  * @author hyena-yang

@@ -1,16 +1,15 @@
 package com.yang.readFile;
 
-import java.io.BufferedInputStream;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-
 import com.yang.unity.HfmedHead;
 import com.yang.util.Byte2Int;
 import com.yang.util.Byte2Short;
 import com.yang.util.Byte2String;
 import com.yang.util.FindByte;
+
+import java.io.BufferedInputStream;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
 
 public class ReadHfmedHead {
     
